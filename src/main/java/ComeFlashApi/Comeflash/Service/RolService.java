@@ -1,0 +1,44 @@
+package ComeFlashApi.Comeflash.Service;
+
+import ComeFlashApi.Comeflash.Modelo.*;
+import ComeFlashApi.Comeflash.Repository.RolRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class RolService {
+
+
+    @Autowired
+    public RolRepository rolRepository;
+
+    //Listar
+    public List<Rol> getAll() {
+        return rolRepository.findAll();
+    }
+
+    //Listar por id
+    public Rol getId(int id) {
+        return rolRepository.findById(id).get();
+    }
+
+
+    //Agregar
+    public Rol add(Rol rol) {
+        return rolRepository.save(rol);
+
+    }
+
+    //Eliminar
+    public String delete(int id) {
+        if (rolRepository.existsById(id)) {
+            rolRepository.deleteById(id);
+            return "Rol eliminado";
+        } else {
+            return "Rol no existe";
+        }
+    }
+
+}
