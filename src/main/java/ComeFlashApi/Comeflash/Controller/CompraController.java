@@ -2,6 +2,7 @@ package ComeFlashApi.Comeflash.Controller;
 
 
 import ComeFlashApi.Comeflash.Assemblers.CompraModelAssembler;
+import ComeFlashApi.Comeflash.Modelo.Comida;
 import ComeFlashApi.Comeflash.Modelo.Compra;
 import ComeFlashApi.Comeflash.Service.CompraService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -91,4 +92,17 @@ public class CompraController {
         }
     }
 
+    @PutMapping("/{id}")
+    @Operation(summary = "Actualizar compra",description = "Actualizar datos de la compra registrada en sistema")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa: Se actualizo la compra")
+    @ApiResponse(responseCode = "404", description = "ERROR: No se actualizo la compra registrada")
+    @ApiResponse(responseCode = "500", description = "ERROR: Fallo inesperado en el servidor")
+    public ResponseEntity<EntityModel<Compra>> update(@PathVariable int id, @RequestBody Compra update) {
+        Compra lista=compraservice.update(id,update);
+        if(lista!=null){
+            return new ResponseEntity<>(assembler.toModel(lista),HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

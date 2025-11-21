@@ -1,4 +1,5 @@
 package ComeFlashApi.Comeflash.Assemblers;
+import ComeFlashApi.Comeflash.Controller.DetalleCompraController;
 import ComeFlashApi.Comeflash.Controller.RolController;
 import ComeFlashApi.Comeflash.Modelo.Rol;
 import org.springframework.hateoas.EntityModel;
@@ -17,7 +18,8 @@ public class RolModelAssembler implements RepresentationModelAssembler<Rol, Enti
         return EntityModel.of(rol,
                 linkTo(methodOn(RolController.class).getId(rol.getId())).withRel("GETID"),
                 linkTo(methodOn(RolController.class).delete(rol.getId())).withRel("DELETE"),
-                linkTo(methodOn(RolController.class).getAll()).withRel("GET")
+                linkTo(methodOn(RolController.class).getAll()).withRel("GET"),
+                linkTo(methodOn(RolController.class).update(rol.getId(), rol)).withRel("PUT")
 
         );
     }

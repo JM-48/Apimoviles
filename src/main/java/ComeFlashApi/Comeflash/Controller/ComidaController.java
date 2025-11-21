@@ -3,6 +3,7 @@ package ComeFlashApi.Comeflash.Controller;
 
 import ComeFlashApi.Comeflash.Assemblers.ComidaModelAssembler;
 import ComeFlashApi.Comeflash.Modelo.Comida;
+import ComeFlashApi.Comeflash.Modelo.Compra;
 import ComeFlashApi.Comeflash.Service.ComidaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -35,12 +36,12 @@ public class ComidaController {
     @ApiResponse(responseCode = "200", description = "Operación exitosa: Se obtuvo todos los Comidas")
     @ApiResponse(responseCode = "404", description = "ERROR: No se listo los Comidas registrados")
     @ApiResponse(responseCode = "500", description = "ERROR: Fallo inesperado en el servidor")
-    public ResponseEntity<CollectionModel<EntityModel<Comida>>> getAll() {
+    public ResponseEntity<List<Comida>> getAll() {
         List<Comida> lista = comidaservice.getAll();
         if (lista.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<>(assembler.toCollectionModel(lista), HttpStatus.OK);
+            return new ResponseEntity<>(lista, HttpStatus.OK);
         }
     }
 
@@ -76,14 +77,13 @@ public class ComidaController {
         }
     }
 
-
     @GetMapping("/{id}")
     @Operation(summary = "Listar comida por id", description = "Listar comida por id en el sistema")
     @ApiResponse(responseCode = "200", description = "Operación exitosa: Se listo la comida")
     @ApiResponse(responseCode = "404", description = "ERROR: No se listo la comida registrada")
     @ApiResponse(responseCode = "500", description = "ERROR: Fallo inesperado en el servidor")
     public ResponseEntity<EntityModel<Comida>> getId(
-            @Parameter(name = "id", description = "El ID del comida a listar", example = "1")
+            @Parameter(name = "id", description = "El ID de la comida a listar", example = "1")
             @PathVariable int id) {
         Comida lista = comidaservice.getId(id);
         if (lista != null) {
@@ -93,4 +93,18 @@ public class ComidaController {
         }
     }
 
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Actualizar comida",description = "Actualizar datos de la comida registrada en sistema")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa: Se actualizo la comida")
+    @ApiResponse(responseCode = "404", description = "ERROR: No se actualizo la comida registrada")
+    @ApiResponse(responseCode = "500", description = "ERROR: Fallo inesperado en el servidor")
+    public ResponseEntity<EntityModel<Comida>> update(@PathVariable int id, @RequestBody Comida update) {
+        Comida lista=comidaservice.update(id,update);
+        if(lista!=null){
+            return new ResponseEntity<>(assembler.toModel(lista),HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

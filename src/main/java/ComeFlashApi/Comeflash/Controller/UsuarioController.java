@@ -1,5 +1,6 @@
 package ComeFlashApi.Comeflash.Controller;
 import ComeFlashApi.Comeflash.Assemblers.UsuarioModelAssembler;
+import ComeFlashApi.Comeflash.Modelo.Rol;
 import ComeFlashApi.Comeflash.Modelo.Usuario;
 import ComeFlashApi.Comeflash.Service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -92,6 +93,19 @@ public class UsuarioController {
         }
     }
 
+    @PutMapping("/{id}")
+    @Operation(summary = "Actualizar usuario",description = "Actualizar datos del usuario registrado en sistema")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa: Se actualizo el usuario")
+    @ApiResponse(responseCode = "404", description = "ERROR: No se actualizo el usuario registrado")
+    @ApiResponse(responseCode = "500", description = "ERROR: Fallo inesperado en el servidor")
+    public ResponseEntity<EntityModel<Usuario>> update(@PathVariable int id, @RequestBody Usuario update) {
+        Usuario lista=usuarioservice.update(id,update);
+        if(lista!=null){
+            return new ResponseEntity<>(assembler.toModel(lista),HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
 
 }

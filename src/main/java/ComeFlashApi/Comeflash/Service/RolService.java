@@ -41,4 +41,15 @@ public class RolService {
         }
     }
 
+    public Rol update(int id, Rol rol) {
+        if (rolRepository.existsById(id)) {
+            Rol update = rolRepository.findById(id).get();
+            update.setNombre(rol.getNombre(  ));
+            return rolRepository.save(update);
+        } else {
+            return null;
+        }
+
+    }
+
 }

@@ -1,6 +1,7 @@
 package ComeFlashApi.Comeflash.Controller;
 
 import ComeFlashApi.Comeflash.Assemblers.RolModelAssembler;
+import ComeFlashApi.Comeflash.Modelo.DetalleCompra;
 import ComeFlashApi.Comeflash.Modelo.Rol;
 import ComeFlashApi.Comeflash.Service.RolService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -74,10 +75,6 @@ public class RolController {
         }
     }
 
-
-
-
-
     @GetMapping("/{id}")
     @Operation(summary = "Listar rol por id", description = "Listar rol por id en el sistema")
     @ApiResponse(responseCode = "200", description = "Operación exitosa: Se listo la rol")
@@ -90,6 +87,20 @@ public class RolController {
         if (lista != null) {
             return new ResponseEntity<>(assembler.toModel(lista), HttpStatus.OK);
         } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Actualizar rol",description = "Actualizar datos del rol registrado en sistema")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa: Se actualizo el rol")
+    @ApiResponse(responseCode = "404", description = "ERROR: No se actualizo el rol registrado")
+    @ApiResponse(responseCode = "500", description = "ERROR: Fallo inesperado en el servidor")
+    public ResponseEntity<EntityModel<Rol>> update(@PathVariable int id, @RequestBody Rol update) {
+        Rol lista=rolservice.update(id,update);
+        if(lista!=null){
+            return new ResponseEntity<>(assembler.toModel(lista),HttpStatus.OK);
+        }else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

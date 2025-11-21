@@ -1,4 +1,5 @@
 package ComeFlashApi.Comeflash.Assemblers;
+import ComeFlashApi.Comeflash.Controller.RolController;
 import ComeFlashApi.Comeflash.Controller.UsuarioController;
 import ComeFlashApi.Comeflash.Modelo.Usuario;
 import org.springframework.hateoas.EntityModel;
@@ -14,7 +15,8 @@ public class UsuarioModelAssembler implements RepresentationModelAssembler<Usuar
         return EntityModel.of(usuario,
                 linkTo(methodOn(UsuarioController.class).getId(usuario.getId())).withRel("GETID"),
                 linkTo(methodOn(UsuarioController.class).delete(usuario.getId())).withRel("DELETE"),
-                linkTo(methodOn(UsuarioController.class).getAll()).withRel("GET")
+                linkTo(methodOn(UsuarioController.class).getAll()).withRel("GET"),
+                linkTo(methodOn(UsuarioController.class).update(usuario.getId(), usuario)).withRel("PUT")
 
         );
     }

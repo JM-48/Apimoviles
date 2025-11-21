@@ -17,7 +17,8 @@ public class ComidaModelAssembler implements RepresentationModelAssembler<Comida
         return EntityModel.of(comida,
                 linkTo(methodOn(ComidaController.class).getId(comida.getId())).withRel("GETID"),
                 linkTo(methodOn(ComidaController.class).delete(comida.getId())).withRel("DELETE"),
-                linkTo(methodOn(ComidaController.class).getAll()).withRel("GET")
+                linkTo(methodOn(ComidaController.class).getAll()).withRel("GET"),
+                linkTo(methodOn(ComidaController.class).update(comida.getId(), comida)).withRel("PUT")
 
         );
     }

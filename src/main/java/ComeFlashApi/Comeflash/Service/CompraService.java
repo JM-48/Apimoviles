@@ -1,5 +1,6 @@
 package ComeFlashApi.Comeflash.Service;
 
+import ComeFlashApi.Comeflash.Modelo.Comida;
 import ComeFlashApi.Comeflash.Modelo.Compra;
 import ComeFlashApi.Comeflash.Repository.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,18 @@ public class CompraService {
     //Agregar
     public Compra add(Compra rol) {
         return compraRepository.save(rol);
+
+    }
+
+    public Compra update(int id, Compra compra) {
+        if (compraRepository.existsById(id)) {
+            Compra update = compraRepository.findById(id).get();
+            update.setDetalles(compra.getDetalles(  ));
+            update.setTotal(compra.getTotal());
+            return compraRepository.save(update);
+        } else {
+            return null;
+        }
 
     }
 

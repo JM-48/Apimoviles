@@ -1,5 +1,6 @@
 package ComeFlashApi.Comeflash.Service;
 
+import ComeFlashApi.Comeflash.Modelo.Rol;
 import ComeFlashApi.Comeflash.Modelo.Usuario;
 import ComeFlashApi.Comeflash.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,18 @@ public class UsuarioService {
     }
 
 
+    public Usuario update(int id, Usuario usuario) {
+        if (usuarioRepository.existsById(id)) {
+            Usuario update = usuarioRepository.findById(id).get();
+            update.setNombre(usuario.getNombre(  ));
+            update.setContrasena(usuario.getContrasena(  ));
+            update.setCorreo(usuario.getCorreo(  ));
+            return usuarioRepository.save(update);
+        } else {
+            return null;
+        }
 
+    }
 
 
 }

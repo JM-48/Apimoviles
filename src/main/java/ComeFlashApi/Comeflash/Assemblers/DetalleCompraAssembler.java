@@ -1,5 +1,6 @@
 package ComeFlashApi.Comeflash.Assemblers;
 
+import ComeFlashApi.Comeflash.Controller.CompraController;
 import ComeFlashApi.Comeflash.Controller.DetalleCompraController;
 import ComeFlashApi.Comeflash.Modelo.DetalleCompra;
 import org.springframework.hateoas.EntityModel;
@@ -15,7 +16,8 @@ public class DetalleCompraAssembler implements RepresentationModelAssembler<Deta
         return EntityModel.of(detalleCompra,
                 linkTo(methodOn(DetalleCompraController.class).getId(detalleCompra.getId())).withRel("GETID"),
                 linkTo(methodOn(DetalleCompraController.class).delete(detalleCompra.getId())).withRel("DELETE"),
-                linkTo(methodOn(DetalleCompraController.class).getAll()).withRel("GET")
+                linkTo(methodOn(DetalleCompraController.class).getAll()).withRel("GET"),
+                linkTo(methodOn(DetalleCompraController.class).update(detalleCompra.getId(), detalleCompra)).withRel("PUT")
 
         );
     }
