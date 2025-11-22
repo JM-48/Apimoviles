@@ -43,7 +43,7 @@ public class ComidaController {
 
 
     @PostMapping
-    public ResponseEntity<Comida> add( Comida r) {
+    public ResponseEntity<Comida> add(@RequestBody Comida r) {
         Comida lista = comidaservice.add(r);
         if (lista != null) {
             return new ResponseEntity<>(lista, HttpStatus.OK);
@@ -53,7 +53,7 @@ public class ComidaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(int id) {
+    public ResponseEntity<?> delete(@PathVariable int id) {
         Comida lista = comidaservice.getId(id);
         if (lista != null) {
             comidaservice.delete(id);
@@ -64,7 +64,7 @@ public class ComidaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Comida> getId(int id) {
+    public ResponseEntity<Comida> getId(@PathVariable int id) {
         Comida lista = comidaservice.getId(id);
         if (lista != null) {
             return new ResponseEntity<>( lista, HttpStatus.OK);
@@ -75,7 +75,7 @@ public class ComidaController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<Comida> update( int id, Comida update) {
+    public ResponseEntity<Comida> update( @PathVariable int id, Comida update) {
         Comida lista=comidaservice.update(id,update);
         if(lista!=null){
             return new ResponseEntity<>(lista,HttpStatus.OK);
