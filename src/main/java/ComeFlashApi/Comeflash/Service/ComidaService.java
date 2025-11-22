@@ -32,17 +32,25 @@ public class ComidaService {
     }
 
     public Comida update(int id, Comida comida) {
+
+        Comida update = comidaRepository.findById(id).get();
         if (comidaRepository.existsById(id)) {
-            Comida update = comidaRepository.findById(id).get();
             update.setNombre(comida.getNombre(  ));
             update.setPrecio(comida.getPrecio());
             update.setDescripcion(comida.getDescripcion());
+            update.setOferta(comida.isOferta());
+
+
             return comidaRepository.save(update);
         } else {
             return null;
         }
 
     }
+
+
+
+
 
     //Eliminar
     public String delete(int id) {

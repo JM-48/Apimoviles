@@ -75,12 +75,11 @@ public class ComidaController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<Comida> update( @PathVariable int id, Comida update) {
+    public ResponseEntity<Comida> update(@PathVariable int id, @RequestBody  Comida update) {
         Comida lista=comidaservice.update(id,update);
-        if(lista!=null){
-            return new ResponseEntity<>(lista,HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return (lista!=null)
+            ?  new ResponseEntity<>(lista,HttpStatus.OK)
+            :new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }
+
 }

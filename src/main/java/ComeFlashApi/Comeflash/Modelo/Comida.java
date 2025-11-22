@@ -12,15 +12,17 @@ public class Comida {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; // Usamos 'id' para ser consistentes con tu modelo de Android
+    private int id;
 
     private String nombre;
-    private String descripcion; // Añadido desde tu ViewModel de Android
-    private double precio; // Cambiado a double para mejor manejo de precios
+    private String descripcion;
+    private double precio;
 
-    private String tipoComida; // Para tu filtro de "Hamburguesa", "Pizza", etc.
-    private boolean oferta; // Para tu filtro de "Ofertas"
+    private String tipoComida;
+    private boolean oferta;
     private String imagenUrl;
 
-    // Si necesitas campos de relación (Sucursal, Proveedor, etc.), añádelos aquí
+    private double precioOferta;
+
+
 }
