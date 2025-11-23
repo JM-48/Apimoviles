@@ -81,4 +81,14 @@ public class UsuarioController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/correo/{correo}")
+    public ResponseEntity<Usuario> getByCorreo(@PathVariable String correo) {
+        Usuario usuario = usuarioservice.getByCorreo(correo);
+        if (usuario != null) {
+            return new ResponseEntity<>(usuario, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
