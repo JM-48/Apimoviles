@@ -20,9 +20,10 @@ public class Comida {
 
     private String tipoComida;
     private boolean oferta;
-    private String imagenUrl;
+    private String codigo;
 
     private double precioOferta;
+
 
 
 }
