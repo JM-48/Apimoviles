@@ -73,7 +73,7 @@ public class RolController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<Rol> update( @PathVariable int id, Rol update) {
+    public ResponseEntity<Rol> update( @PathVariable int id, @RequestBody Rol update) {
         Rol lista=rolservice.update(id,update);
         if(lista!=null){
             return new ResponseEntity<>(lista,HttpStatus.OK);

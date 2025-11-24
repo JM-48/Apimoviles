@@ -73,7 +73,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Usuario> update(@PathVariable int id, Usuario update) {
+    public ResponseEntity<Usuario> update(@PathVariable int id, @RequestBody Usuario update) {
         Usuario lista=usuarioservice.update(id,update);
         if(lista!=null){
             return new ResponseEntity<>(lista,HttpStatus.OK);
