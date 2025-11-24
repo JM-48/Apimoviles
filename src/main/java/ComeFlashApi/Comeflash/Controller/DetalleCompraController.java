@@ -74,7 +74,7 @@ public class DetalleCompraController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<DetalleCompra> update(@PathVariable int id, DetalleCompra update) {
+    public ResponseEntity<DetalleCompra> update(@PathVariable int id, @RequestBody DetalleCompra update) {
         DetalleCompra lista=detalleCompraservice.update(id,update);
         if(lista!=null){
             return new ResponseEntity<>(lista,HttpStatus.OK);
