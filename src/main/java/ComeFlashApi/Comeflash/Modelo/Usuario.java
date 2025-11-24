@@ -20,14 +20,14 @@ public class Usuario {
     private int id;
     private String nombre;
     private String correo;
-    private String contrasena; // NOTA: Nunca almacenar contraseñas sin hashear.
+    private String contrasena;
 
-    // Relación Muchos a Uno (Muchos Usuarios tienen 1 Rol)
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "rol_id")
     private Rol rol;
 
-    // El campo logoUri no es esencial para la lógica del backend, se mantiene si es necesario.
+
     private String logoUri;
 
 

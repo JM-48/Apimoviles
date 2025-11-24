@@ -20,7 +20,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/comidas") // Nueva URL para comidas
+@RequestMapping("/api/v1/comidas")
 @Tag(name= "Comida", description = "Operaciones con COMIDAS")
 public class ComidaController {
 
