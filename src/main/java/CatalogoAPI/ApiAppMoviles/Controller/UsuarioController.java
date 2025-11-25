@@ -1,4 +1,4 @@
-package ComeFlashApi.ApiAppMoviles.Controller;
+package CatalogoAPI.ApiAppMoviles.Controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -10,9 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import ComeFlashApi.ApiAppMoviles.Assemblers.UsuarioModelAssembler;
-import ComeFlashApi.ApiAppMoviles.Modelo.Usuario;
-import ComeFlashApi.ApiAppMoviles.Service.UsuarioService;
+import CatalogoAPI.ApiAppMoviles.Assemblers.UsuarioModelAssembler;
+import CatalogoAPI.ApiAppMoviles.Modelo.Usuario;
+import CatalogoAPI.ApiAppMoviles.Service.UsuarioService;
 
 import java.util.List;
 

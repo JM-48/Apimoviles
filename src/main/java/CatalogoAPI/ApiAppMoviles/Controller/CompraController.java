@@ -1,4 +1,4 @@
-package ComeFlashApi.ApiAppMoviles.Controller;
+package CatalogoAPI.ApiAppMoviles.Controller;
 
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -12,10 +12,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import ComeFlashApi.ApiAppMoviles.Assemblers.CompraModelAssembler;
-import ComeFlashApi.ApiAppMoviles.Modelo.Compra;
-import ComeFlashApi.ApiAppMoviles.Modelo.Productos;
-import ComeFlashApi.ApiAppMoviles.Service.CompraService;
+import CatalogoAPI.ApiAppMoviles.Assemblers.CompraModelAssembler;
+import CatalogoAPI.ApiAppMoviles.Modelo.Compra;
+import CatalogoAPI.ApiAppMoviles.Modelo.Productos;
+import CatalogoAPI.ApiAppMoviles.Service.CompraService;
 
 import java.util.List;
 

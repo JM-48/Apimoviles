@@ -1,10 +1,10 @@
-package ComeFlashApi.ApiAppMoviles.Service;
+package CatalogoAPI.ApiAppMoviles.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ComeFlashApi.ApiAppMoviles.Modelo.Boleta;
-import ComeFlashApi.ApiAppMoviles.Repository.BoletaReposity;
+import CatalogoAPI.ApiAppMoviles.Modelo.Boleta;
+import CatalogoAPI.ApiAppMoviles.Repository.BoletaReposity;
 
 import java.util.List;
 @Service

@@ -1,9 +1,9 @@
-package ComeFlashApi.ApiAppMoviles.Repository;
+package CatalogoAPI.ApiAppMoviles.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import ComeFlashApi.ApiAppMoviles.Modelo.Compra;
+import CatalogoAPI.ApiAppMoviles.Modelo.Compra;
 
 @Repository
 public interface CompraRepository extends JpaRepository<Compra, Integer> {

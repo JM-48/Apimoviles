@@ -1,4 +1,4 @@
-package ComeFlashApi.ApiAppMoviles.Modelo;
+package CatalogoAPI.ApiAppMoviles.Modelo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "usuarios") 
+@Table(name = "usuarios")
 public class Usuario {
 
     @Id

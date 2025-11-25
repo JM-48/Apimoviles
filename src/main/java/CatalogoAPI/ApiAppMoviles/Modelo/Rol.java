@@ -1,4 +1,4 @@
-package ComeFlashApi.ApiAppMoviles.Modelo;
+package CatalogoAPI.ApiAppMoviles.Modelo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

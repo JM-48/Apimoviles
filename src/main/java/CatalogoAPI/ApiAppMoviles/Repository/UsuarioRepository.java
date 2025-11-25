@@ -1,10 +1,10 @@
-package ComeFlashApi.ApiAppMoviles.Repository;
+package CatalogoAPI.ApiAppMoviles.Repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import ComeFlashApi.ApiAppMoviles.Modelo.Usuario;
+import CatalogoAPI.ApiAppMoviles.Modelo.Usuario;
 
 import java.util.Optional;
 

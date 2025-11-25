@@ -1,4 +1,4 @@
-package ComeFlashApi.ApiAppMoviles.Controller;
+package CatalogoAPI.ApiAppMoviles.Controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -11,10 +11,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import ComeFlashApi.ApiAppMoviles.Assemblers.RolModelAssembler;
-import ComeFlashApi.ApiAppMoviles.Modelo.DetalleCompra;
-import ComeFlashApi.ApiAppMoviles.Modelo.Rol;
-import ComeFlashApi.ApiAppMoviles.Service.RolService;
+import CatalogoAPI.ApiAppMoviles.Assemblers.RolModelAssembler;
+import CatalogoAPI.ApiAppMoviles.Modelo.DetalleCompra;
+import CatalogoAPI.ApiAppMoviles.Modelo.Rol;
+import CatalogoAPI.ApiAppMoviles.Service.RolService;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
-package ComeFlashApi.ApiAppMoviles.Assemblers;
+package CatalogoAPI.ApiAppMoviles.Assemblers;
 
 
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 
-import ComeFlashApi.ApiAppMoviles.Controller.CompraController;
-import ComeFlashApi.ApiAppMoviles.Modelo.Compra;
+import CatalogoAPI.ApiAppMoviles.Controller.CompraController;
+import CatalogoAPI.ApiAppMoviles.Modelo.Compra;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;

@@ -1,12 +1,12 @@
-package ComeFlashApi.ApiAppMoviles.Service;
+package CatalogoAPI.ApiAppMoviles.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ComeFlashApi.ApiAppMoviles.Modelo.Rol;
-import ComeFlashApi.ApiAppMoviles.Modelo.Usuario;
-import ComeFlashApi.ApiAppMoviles.Repository.RolRepository;
-import ComeFlashApi.ApiAppMoviles.Repository.UsuarioRepository;
+import CatalogoAPI.ApiAppMoviles.Modelo.Rol;
+import CatalogoAPI.ApiAppMoviles.Modelo.Usuario;
+import CatalogoAPI.ApiAppMoviles.Repository.RolRepository;
+import CatalogoAPI.ApiAppMoviles.Repository.UsuarioRepository;
 
 import java.util.List;
 

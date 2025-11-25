@@ -1,4 +1,4 @@
-package ComeFlashApi.ApiAppMoviles;
+package CatalogoAPI.ApiAppMoviles;
 
 
 import org.springframework.boot.SpringApplication;
