@@ -48,6 +48,12 @@
 				<artifactId>spring-boot-starter-data-jpa</artifactId>
 			</dependency>
 
+			<!-- SPRING HATEOAS (obligatorio para tus Assemblers y Controllers) -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-hateoas</artifactId>
+			</dependency>
+
 			<!-- H2 DATABASE (PARA RENDER) -->
 			<dependency>
 				<groupId>com.h2database</groupId>
