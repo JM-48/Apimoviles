@@ -1,4 +1,6 @@
 package CatalogoAPI.ApiAppMoviles.Modelo;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class DetalleCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +19,7 @@ public class DetalleCompra {
     // Relación Muchos a Uno (Muchos detalles pertenecen a 1 Compra)
     @ManyToOne
     @JoinColumn(name = "compra_id")
+    @JsonBackReference
     private Compra compra;
 
     // Relación Muchos a Uno (El detalle apunta a la comida comprada)

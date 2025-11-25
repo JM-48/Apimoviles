@@ -24,7 +24,7 @@ public class DetalleCompraService {
 
     //Listar por id
     public DetalleCompra getId(int id) {
-        return detalleCompraRepository.findById(id).get();
+        return detalleCompraRepository.findById(id).orElse(null);
     }
 
 

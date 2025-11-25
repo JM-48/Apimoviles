@@ -32,11 +32,7 @@ public class UsuarioController {
     @GetMapping
     public ResponseEntity<List<Usuario>> getAll() {
         List<Usuario> lista = usuarioservice.getAll();
-        if (lista.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(lista, HttpStatus.OK);
-        }
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
 

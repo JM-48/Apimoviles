@@ -21,7 +21,7 @@ public class BoletaService {
 
     //Listar por id
     public Boleta getId(int id) {
-        return boletaRepository.findById(id).get();
+        return boletaRepository.findById(id).orElse(null);
     }
 
 

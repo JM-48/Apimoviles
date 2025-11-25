@@ -34,11 +34,7 @@ public class DetalleCompraController {
     @GetMapping
     public ResponseEntity<List<DetalleCompra>> getAll() {
         List<DetalleCompra> lista = detalleCompraservice.getAll();
-        if (lista.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(lista, HttpStatus.OK);
-        }
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
 

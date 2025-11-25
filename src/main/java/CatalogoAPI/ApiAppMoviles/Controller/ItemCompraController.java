@@ -25,11 +25,7 @@ public class ItemCompraController {
     @GetMapping
     public ResponseEntity<List<ItemCompra>> getAll() {
         List<ItemCompra> lista = boletaService.getAll();
-        if (lista.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(lista, HttpStatus.OK);
-        }
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
 

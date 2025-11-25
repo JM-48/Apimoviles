@@ -24,11 +24,7 @@ public class BoletaController {
     @GetMapping
     public ResponseEntity<List<Boleta>> getAll() {
         List<Boleta> lista = boletaService.getAll();
-        if (lista.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(lista, HttpStatus.OK);
-        }
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
 

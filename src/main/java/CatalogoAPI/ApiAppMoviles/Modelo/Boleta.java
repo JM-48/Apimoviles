@@ -1,4 +1,5 @@
 package CatalogoAPI.ApiAppMoviles.Modelo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Boleta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

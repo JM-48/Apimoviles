@@ -20,7 +20,7 @@ public class ItemCompraService {
 
     //Listar por id
     public ItemCompra getId(int id) {
-        return itemCompraRepository.findById(id).get();
+        return itemCompraRepository.findById(id).orElse(null);
     }
 
 

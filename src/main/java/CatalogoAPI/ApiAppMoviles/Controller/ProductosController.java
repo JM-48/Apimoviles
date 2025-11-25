@@ -35,11 +35,7 @@ public class ProductosController {
     @GetMapping
     public ResponseEntity<List<Productos>> getAll() {
         List<Productos> lista = productosservice.getAll();
-        if (lista.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(lista, HttpStatus.OK);
-        }
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
 

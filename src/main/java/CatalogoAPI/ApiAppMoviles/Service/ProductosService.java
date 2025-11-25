@@ -23,7 +23,7 @@ public class ProductosService {
 
     //Listar por id
     public Productos getId(int id) {
-        return productosRepository.findById(id).get();
+        return productosRepository.findById(id).orElse(null);
     }
 
 

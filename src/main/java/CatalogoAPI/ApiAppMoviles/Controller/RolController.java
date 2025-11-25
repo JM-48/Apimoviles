@@ -32,11 +32,7 @@ public class RolController {
     @GetMapping
     public ResponseEntity<List<Rol>> getAll() {
         List<Rol> lista = rolservice.getAll();
-        if (lista.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(lista, HttpStatus.OK);
-        }
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
 

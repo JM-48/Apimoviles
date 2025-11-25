@@ -22,7 +22,7 @@ public class CompraService {
 
     //Listar por id
     public Compra getId(int id) {
-        return compraRepository.findById(id).get();
+        return compraRepository.findById(id).orElse(null);
     }
 
 

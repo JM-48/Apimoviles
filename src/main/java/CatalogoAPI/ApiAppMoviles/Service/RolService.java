@@ -22,7 +22,7 @@ public class RolService {
 
     //Listar por id
     public Rol getId(int id) {
-        return rolRepository.findById(id).get();
+        return rolRepository.findById(id).orElse(null);
     }
 
 
